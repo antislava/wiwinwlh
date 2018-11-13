@@ -7134,25 +7134,25 @@ data instance Sing (a :: Bool) where
 
 **Promoted Naturals**
 
-Value-level  Type-level         Models
------------  ------------       -------
-SZ           Sing 'Z            0
-SS SZ        Sing ('S 'Z)       1
-SS (SS SZ)   Sing ('S ('S 'Z))  2
+Value-level  Type-level           Models
+-----------  ------------         -------
+`SZ`         `Sing 'Z`            0
+`SS SZ`      `Sing ('S 'Z)`       1
+`SS (SS SZ)` `Sing ('S ('S 'Z))`  2
 
 **Promoted Booleans**
 
 Value-level  Type-level         Models
 -----------  ---------------    -------
-SFalse       Sing 'False        False
-STrue        Sing 'True         True
+`SFalse`     `Sing 'False`      `False`
+`STrue`      `Sing 'True`       `True`
 
 **Promoted Maybe**
 
 Value-level  Type-level         Models
------------  ---------------    -------
-SJust a      Sing (SJust 'a)    Just a
-SNothing     Sing Nothing       Nothing
+-----------  ----------------   -------
+`SJust a`    `Sing ('Just a)`   `Just a`
+`SNothing`   `Sing 'Nothing`    `Nothing`
 
 Singleton types are an integral part of the small cottage industry of faking
 dependent types in Haskell, i.e.  constructing types with terms predicated upon
